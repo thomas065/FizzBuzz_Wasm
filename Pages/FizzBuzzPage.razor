@@ -1,0 +1,31 @@
+﻿@page "/fizzbuzz"
+
+<PageTitle>Fizz Buzz</PageTitle>
+
+<h3>Can you fizzbuzz?</h3>
+<div class="row row-cols-1 row-cols-md-3">
+	<div class="col">
+		<label class="form-label">Fizz Value</label>
+		<input class="form-control" @bind-value="FizzValue" type="number" />
+	</div>
+	<div class="col">
+		<label class="form-label">Buzz Value</label>
+		<input class="form-control" @bind-value="BuzzValue" type="number" />
+	</div>
+	<div class="col">
+		<label class="form-label">Count</label>
+		<input class="form-control" @bind-value="Count" type="number" />
+	</div>
+</div>
+
+<div class="row mt-5 border-top border-dark border-2">
+	<div class="col mt-4">
+		<FizzBuzzComponent FizzValue="@FizzValue" BuzzValue="@BuzzValue" Count="@Count" />
+	</div>
+</div>
+
+@code {
+	private int FizzValue = 3;
+	private int BuzzValue = 5;
+	private int Count = 20;
+}

@@ -1,0 +1,36 @@
+﻿<div class="row row-cols-1 row-cols-md-5">
+	@for (int i = 1; i <= Count; i++)
+	{
+		<div class="col g-2">
+			<div class="bg-secondary p-2 text-center border border-dark border-2">
+				@if (i % FizzValue != 0 && i % BuzzValue != 0)
+				{
+					<span>@i</span>
+				}
+				else
+				{
+					if (i % FizzValue == 0)
+					{
+						<span class="text-fizz">Fizz</span>
+					}
+
+					if (i % BuzzValue == 0)
+					{
+						<span class="text-buzz ">Buzz</span>
+					}
+				}
+			</div>
+		</div>
+	}
+</div>
+
+@code {
+	[Parameter]
+	public int Count { get; set; }
+
+	[Parameter]
+	public int FizzValue { get; set; }
+
+	[Parameter]
+	public int BuzzValue { get; set; }
+}
